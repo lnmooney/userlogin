@@ -1,0 +1,12 @@
+@model User
+ 
+@{
+    ViewBag.Title = "SuccessfulLogin";
+}
+
+<fieldset>
+    @if (Session["Username"] != null)
+    {
+        <p>Welcome to the portal!</p>
+    }
+</fieldset>
