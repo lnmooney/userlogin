@@ -69,3 +69,5 @@
 /Users/leahmooney/Desktop/UFISApp/obj/Debug/netcoreapp3.1/UFISApp.genruntimeconfig.cache
 /Users/leahmooney/Desktop/UFISApp/obj/Debug/netcoreapp3.1/Razor/Views/User/Login.cshtml.g.cs
 /Users/leahmooney/Desktop/UFISApp/obj/Debug/netcoreapp3.1/Razor/Views/User/SuccessfulLogin.cshtml.g.cs
+/Users/leahmooney/Desktop/UFISApp/bin/Debug/netcoreapp3.1/NLog.config
+/Users/leahmooney/Desktop/UFISApp/bin/Debug/netcoreapp3.1/NLog.dll

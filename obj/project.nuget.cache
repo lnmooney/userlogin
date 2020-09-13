@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O/p75ppSlFdPkO8Hs8QaI2pv7Jczxh5pPZX/BZWHCYG11SdXLbd0HgOlwwKmDPqPMBd3o2aOcpAnZ+9FuBDkGw==",
+  "dgSpecHash": "Gv0YYME1wcIoqbRW4sx71q4qYnJAKNs3OS+iXzs6TULDV1r0rk0siMBVT3B2XFR4707PeDguu3GwoLrzulQotw==",
   "success": true,
   "projectFilePath": "/Users/leahmooney/Desktop/UFISApp/UFISApp.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "/Users/leahmooney/.nuget/packages/microsoft.netcore.platforms/2.0.0/microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "/Users/leahmooney/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/leahmooney/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "/Users/leahmooney/.nuget/packages/nlog/4.7.4/nlog.4.7.4.nupkg.sha512",
     "/Users/leahmooney/.nuget/packages/runtime.native.system/4.3.0/runtime.native.system.4.3.0.nupkg.sha512",
     "/Users/leahmooney/.nuget/packages/runtime.native.system.data.sqlclient.sni/4.4.0/runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "/Users/leahmooney/.nuget/packages/runtime.win-arm64.runtime.native.system.data.sqlclient.sni/4.4.0/runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

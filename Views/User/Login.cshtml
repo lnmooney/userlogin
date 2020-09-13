@@ -18,7 +18,7 @@
         .error {
             color: red;
         }
-    </style>
+    </style> 
 </head>
 <body>
     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
@@ -29,7 +29,7 @@
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
         <div style="max-width: 400px;">
-            <h2 class="form-signin-heading">
+            <h2 class="form-signin-heading" style="color:whitesmoke;">
                 Login
             </h2>
             @Html.LabelFor(m => m.Username)
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn btn-primary" Text="Encrypt" OnClick="Encrypt">Sign In</button>
     }
 
     @if (@ViewBag.Message != null)
