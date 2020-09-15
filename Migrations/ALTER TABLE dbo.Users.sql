@@ -1,0 +1,8 @@
+ALTER TABLE dbo.Users 
+ADD FirstName VARCHAR(20)
+
+ALTER TABLE dbo.Users 
+ADD LastName VARCHAR(20)
+
+ALTER TABLE dbo.Users 
+ADD Email VARCHAR(20)
