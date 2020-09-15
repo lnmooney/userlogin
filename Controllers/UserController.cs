@@ -114,7 +114,7 @@ namespace UFISApp.Controllers
             return View(user);
         }
 
-        // create method to redirect user after successful login
+        // // create method to redirect user after successful login
         public ActionResult SuccessfulLogin()
         {
             if (Session["UserId"] != null)
