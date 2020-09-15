@@ -9,6 +9,30 @@ namespace UFISApp.Controllers
 {
     public class UserController : Controller 
     {
+        private LoginContext db = new LoginContext();
+        public ActionResult Index() 
+        {
+            return View();
+        }
+
+        // create register method
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(User user)
+        {
+            if(ModelState.IsValid)
+            {   
+                db.Users.Add(user);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(user);
+        }
+
         [HttpGet]
         public IActionResult Login()
         {
