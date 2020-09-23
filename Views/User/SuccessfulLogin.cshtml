@@ -1,12 +1,33 @@
-@model User
+@model IEnumerable<User>
  
 @{
     ViewBag.Title = "SuccessfulLogin";
 }
+ 
+<!DOCTYPE html>
 
-<fieldset>
-    @if (Session["Username"] != null)
-    {
-        <p>Welcome to the portal!</p>
-    }
-</fieldset>
+<html>
+    <head>
+        <h2 style="text-align: center;">You have successfully signed in!</h2>
+    </head>
+    <body>
+        <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+        <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+        <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
+          media="screen"/>
+          
+        @using (Html.BeginForm())
+        {
+            @* Wanted to display all users*@
+            @* @foreach (var user in Model)
+            {
+                <li>@user.UserId @user.FirstName @user.LastName</li>
+            } *@
+            
+            @* add options for user once they have successfully signed in*@
+            <p style="text-align: center;">Would you like to Update or Delete user account?</p>
+            <p style="text-align: center;"><a href="https://localhost:5001/user/update">Update</a></p>
+            <p style="text-align: center;"><a href="https://localhost:5001/user/delete">Delete</a></p>
+        }
+    </body>
+</html>

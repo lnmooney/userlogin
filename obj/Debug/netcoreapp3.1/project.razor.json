@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/leahmooney/Desktop/UFISApp/Views/Shared/Index.cshtml",
+      "TargetPath": "Views\\Shared\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/leahmooney/Desktop/UFISApp/Views/User/Register.cshtml",
       "TargetPath": "Views\\User\\Register.cshtml",
       "FileKind": "mvc"
@@ -14429,11 +14434,6 @@
     {
       "FilePath": "/Users/leahmooney/Desktop/UFISApp/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/leahmooney/Desktop/UFISApp/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

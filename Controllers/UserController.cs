@@ -4,33 +4,38 @@ using System.Security.Cryptography;
 using System.Text;
 using System;
 using System.IO;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace UFISApp.Controllers
 {
     public class UserController : Controller 
     {
-        private LoginContext db = new LoginContext();
-        public ActionResult Index() 
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
+            using (var db = new LoginContext())
+            {
+                var model = await db.Users.AsNoTracking().ToListAsync();
+                return View(model);
+            }
+        }  
 
         // create register method
+        [HttpGet]
         public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Register(User user)
+        public async Task<IActionResult> Register(User user)
         {
-            if(ModelState.IsValid)
-            {   
-                db.Users.Add(user);
-                db.SaveChanges();
+            using (var db = new LoginContext())
+            {
+                db.Add(user);
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(user);
         }
 
         [HttpGet]
@@ -38,7 +43,8 @@ namespace UFISApp.Controllers
         {
             return View();
         }
-        private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
+
+        // private static Logger logger = LogManager.GetLogger("myAppLoggerRules");
 
         // encrypt method
         private string Encrypt(string clearText)
@@ -86,45 +92,27 @@ namespace UFISApp.Controllers
             return cipherText;
         }
 
+        // create method to validate user credentials 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        // create method to validate user credentials 
         public ActionResult Login(User user)
         {
-            if (ModelState.IsValid)
+            using (var db = new LoginContext())
             {
-                using (LoginContext db = new LoginContext())
-                {
-                    // make sure username and password both match
-                    var obj = db.Users.Where(u => u.Username.Equals(user.Username) && u.Password.Equals(user.Password)).FirstOrDefault();
-
-                        // redirect to successful login page
-                        if (obj != null)
-                        {
-                            Session["UserID"] = obj.UserId.ToString();  
-                            Session["UserName"] = obj.Username.ToString();  
-                            return RedirectToAction("SuccessfulLogin");
-                        }
-                        else 
-                        {
-                            user.LoginErrorMessage = "Wrong username or password."; 
-                        }
-                }
+                // make sure username and password both match
+                var obj = db.Users.Where(u => u.Username.Equals(user.Username) && u.Password.Equals(user.Password)).FirstOrDefault();
+                    // redirect to successful login page
+                    if (obj != null)
+                    {
+                        // Session["UserID"] = obj.UserId.ToString();  
+                        // Session["UserName"] = obj.Username.ToString();  
+                        return View("SuccessfulLogin");
+                    }
+                    else 
+                    {
+                        return View("Index"); 
+                    }
             } 
-            return View(user);
-        }
-
-        // // create method to redirect user after successful login
-        public ActionResult SuccessfulLogin()
-        {
-            if (Session["UserId"] != null)
-            {
-                return View();
-            }
-            else 
-            {
-                return RedirectToAction("Login");
-            }
-        }        
+        }      
     }
 }
